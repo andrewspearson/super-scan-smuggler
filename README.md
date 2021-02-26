@@ -52,7 +52,7 @@ Edit the configuration file for your environment. Please be familiar with [JSON]
         "secret_key": "6974206973207765646e6573646179206d792064756465732121212121212121",
         "proxies": {"https":  "127.0.0.1:8080"},
         "ssl_verify": true,
-        "scan_ids": [100, 101, 102]
+        "scan_ids": [1, 2, 3, 4, 5]
       },
       {
         "enabled": false,
@@ -61,7 +61,7 @@ Edit the configuration file for your environment. Please be familiar with [JSON]
         "secret_key": "",
         "proxies": null,
         "ssl_verify": true,
-        "scan_ids": [200, 201, 202]
+        "scan_ids": []
       }
     ],
     "tenable_sc": [
@@ -73,7 +73,7 @@ Edit the configuration file for your environment. Please be familiar with [JSON]
         "secret_key": "6d792064756465732121212121212121",
         "proxies": null,
         "ssl_verify": false,
-        "scan_ids": []
+        "scan_ids": [6, 7, 8 ,9, 10]
       },
       {
         "enabled": false,
@@ -90,11 +90,23 @@ Edit the configuration file for your environment. Please be familiar with [JSON]
     "nessus_files": [
       {
         "enabled": true,
+        "directory": "/home/person/scan-files/malware"
+      },
+      {
+        "enabled": true,
         "directory": "/home/person/scan-files/mdm"
       },
       {
-        "enabled": false,
-        "directory": "/home/person/scan-files/malware"
+        "enabled": true,
+        "directory": "/home/person/scan-files/ot"
+      },
+      {
+        "enabled": true,
+        "directory": "/home/person/scan-files/solarwinds"
+      },
+      {
+        "enabled": true,
+        "directory": "/home/person/scan-files/struts"
       }
     ]
   },
@@ -161,16 +173,16 @@ INFO: The following scans will be uploaded:
       /home/person/scan-files/solarwinds/Solarwinds_Orion.nessus
       /home/person/scan-files/solarwinds/SUPERNOVA.nessus
       /home/person/scan-files/struts/Struts.nessus
-      /tmp/33.nessus
-      /tmp/37.nessus
-      /tmp/2247.nessus
-      /tmp/4290.nessus
-      /tmp/4292.nessus
-      /tmp/4733.nessus
-      /tmp/2366.nessus
-      /tmp/2368.nessus
-      /tmp/2375.nessus
-      /tmp/2377.nessus
+      /tmp/1.nessus
+      /tmp/2.nessus
+      /tmp/3.nessus
+      /tmp/4.nessus
+      /tmp/5.nessus
+      /tmp/6.nessus
+      /tmp/7.nessus
+      /tmp/8.nessus
+      /tmp/9.nessus
+      /tmp/10.nessus
 INFO: Uploading scans to apearson@<obfuscated>
 INFO: Uploading scans to apearson@<obfuscated>
 INFO: Removing downloaded scan files from local disk
