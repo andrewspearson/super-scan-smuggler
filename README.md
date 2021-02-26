@@ -1,5 +1,5 @@
 # super-scan-smuggler
-super-scan-smuggler.py downloads scan data from multiple Tenable products and then uploads it to multiple Tenable products. This script can also upload static .nessus files that might be saved on disk.
+super-scan-smuggler.py will download scan files from multiple Tenable.IO and/or Tenable.SC systems, then upload those scans to multiple Tenable.IO and/or Tenable.SC systems. It can also read in static Nessus scan files stored on disk and upload those.
 ## Requirements
 * python3
 * [pyTenable](https://github.com/tenable/pyTenable)
@@ -40,7 +40,76 @@ $ ./venv/bin/python super-scan-smuggler.py --config-gen
 
 INFO: Edit tenable.json for your environment
 ```
-Edit the configuration file for your environment. Please be familiar with [JSON](https://en.wikipedia.org/wiki/JSON) data types before editing. Here is an example ```tenable.json``` configuration file:
+Edit the configuration file for your environment. Please be familiar with [JSON](https://en.wikipedia.org/wiki/JSON) data types before editing. 
+
+```tenable.json``` fields are described as follows:
+```
+{
+  "downloads": { # Download scan data from the following Tenable.IO and Tenable.SC instances
+    "tenable_io": [ # JSON array of Tenable.IO instances to pull scans from
+      {
+        "enabled": true, # Pull data from this instance of Tenable.IO
+        "id": "", # This has no effect on the script. It is simply here so us humans can keep the instances straight.
+        "access_key": "", # Tenable.IO access key
+        "secret_key": "", # Tenable.IO secret key
+        "proxies": {"https":  "127.0.0.1:8080"}, # https://requests.readthedocs.io/en/master/user/advanced/#proxies
+        "ssl_verify": true, # Enable or disable SSL verification
+        "scan_ids": [] # List of scan IDs to pull from Tenable.IO. You can get a scan ID by clicking on the scan in Tenable.IO and looking at the URL.
+      }
+    ],
+    "tenable_sc": [ # JSON array of Tenable.SC instances to pull scans from
+      {
+        "enabled": false,
+        "id": "",
+        "host": "", # Tenable.SC host address
+        "access_key": "",
+        "secret_key": "",
+        "proxies": null,
+        "ssl_verify": false, # Tenable.SC ships with a self-signed certificate
+        "scan_ids": [] # Scan IDs to pull from Tenable.SC. NOTE: These are scan IDs from "Active Scans", NOT "Scan Results". The script will find the right Scan Results.
+      }
+    ],
+    "completed_within_days": 1, # Scans must have completed within x days to be downloaded. This ensures only fresh data is transfered.
+    "nessus_files": [ # JSON array of directories to pull scans from
+      {
+        "enabled": true,
+        "directory": "" # Upload all .nessus files in this directory
+      }
+    ]
+  },
+  "uploads": { # Now that scan files have been collected, upload the scans to the following systems
+    "tenable_io": [ # JSON array of Tenable.IO instances to upload the scans to
+      {
+        "enabled": true,
+        "id": "",
+        "access_key": "",
+        "secret_key": "",
+        "proxies": null,
+        "ssl_verify": true,
+        "folder_id": 10000, # Folder ID to upload scan data to. You can get the folder ID by looking at the URL in Tenable.IO.
+        "dashboards": true # Include the uploaded scan data in the vulnerability workbench (aggregate)
+      }
+    ],
+    "tenable_sc": [ # JSON array of Tenable.SC instances to upload the scans to
+      {
+        "enabled": true,
+        "id": "",
+        "host": "",
+        "access_key": "",
+        "secret_key": "",
+        "proxies": null,
+        "ssl_verify": false,
+        "repository_id": 1, # Repository ID to upload scans to
+        "dhcp": true, # See Advanced setting descriptions here https://docs.tenable.com/tenablesc/Content/ActiveScanSettings.htm
+        "virtual_hosts": false, # See Advanced setting descriptions here https://docs.tenable.com/tenablesc/Content/ActiveScanSettings.htm 
+        "dead_hosts_wait": 0 # See Advanced setting descriptions here https://docs.tenable.com/tenablesc/Content/ActiveScanSettings.htm
+      }
+    ]
+  }
+}
+```
+
+Here is an example of a completed ```tenable.json``` configuration file:
 ```json
 {
   "downloads": {
