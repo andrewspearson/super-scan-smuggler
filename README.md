@@ -156,10 +156,10 @@ INFO: The following scans will be uploaded:
       /home/person/scan-files/malware/nessus_report_2.nessus
       /home/person/scan-files/mdm/AirWatch_MDM-4Assets.nessus
       /home/person/scan-files/mdm/AirWatch_MDM-3Assets.nessus
-      /home/person/scan-files/ot/OT_Data_Import-export.nessus
-      /home/person/scan-files/solarwinds/sunburst-export2.nessus
-      /home/person/scan-files/solarwinds/Solarwinds_Orion_VCF-export.nessus
-      /home/person/scan-files/solarwinds/SUPERNOVA_plugin_test-export.nessus
+      /home/person/scan-files/ot/OT.nessus
+      /home/person/scan-files/solarwinds/sunburst.nessus
+      /home/person/scan-files/solarwinds/Solarwinds_Orion.nessus
+      /home/person/scan-files/solarwinds/SUPERNOVA.nessus
       /home/person/scan-files/struts/Struts.nessus
       /tmp/33.nessus
       /tmp/37.nessus
