@@ -19,7 +19,7 @@ $ crontab -l
 0 8 * * * /usr/local/bin/super-scan-smuggler/venv/bin/python /usr/local/bin/super-scan-smuggler/super-scan-smuggler.py --config /usr/local/bin/super-scan-smuggler/tenable.ini
 ```
 ## Usage
-View the help menu
+#### View the help menu
 ```
 $ cd /usr/local/bin
 $ ./venv/bin/python scan-smuggler.py -h
@@ -34,15 +34,14 @@ optional arguments:
                         JSON config file
   --config-gen          Generate a new JSON config file
 ```
-Generate a configuration file
+#### Generate a configuration file
 ```
 $ ./venv/bin/python super-scan-smuggler.py --config-gen
 
 INFO: Edit tenable.json for your environment
 ```
-Edit the configuration file for your environment. Please be familiar with [JSON](https://en.wikipedia.org/wiki/JSON) data types before editing. 
 
-```tenable.json``` fields are described as follows:
+#### ```tenable.json``` field descriptions
 ```
 {
   "downloads": {                                # Download scan data from the following Tenable.IO and Tenable.SC instances
@@ -109,7 +108,8 @@ Edit the configuration file for your environment. Please be familiar with [JSON]
 }
 ```
 
-Here is an example of a completed ```tenable.json``` configuration file:
+
+#### Completed ```tenable.json``` example
 ```json
 {
   "downloads": {
@@ -210,9 +210,10 @@ Here is an example of a completed ```tenable.json``` configuration file:
   }
 }
 ```
-IMPORTANT: Be sure to change permissions on the configuration file so everyone cannot read your API keys.
 
-Run the script
+**IMPORTANT**: Change permissions on the configuration file so only the script can read your API keys.
+
+#### Run the script
 ```
 $ ./venv/bin/python /usr/local/bin/super-scan-smuggler/super-scan-smuggler.py --config /usr/local/bin/super-scan-smuggler/tenable.json 
 INFO: Downloading scans from apearson@<obfuscated>
