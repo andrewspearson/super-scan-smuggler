@@ -118,7 +118,7 @@ INFO: Edit tenable.json for your environment
     "tenable_io": [
       {
         "enabled": true,
-        "id": "person@company.com",
+        "id": "apearson@redacted.com",
         "access_key": "6974206973207765646e6573646179206d792064756465732121212121212121",
         "secret_key": "6974206973207765646e6573646179206d792064756465732121212121212121",
         "proxies": {"https":  "127.0.0.1:8080"},
@@ -127,7 +127,7 @@ INFO: Edit tenable.json for your environment
       },
       {
         "enabled": false,
-        "id": "person@company2.com",
+        "id": "apearson@redacted.com",
         "access_key": "",
         "secret_key": "",
         "proxies": null,
@@ -138,7 +138,7 @@ INFO: Edit tenable.json for your environment
     "tenable_sc": [
       {
         "enabled": true,
-        "id": "person@tsc.corp.local",
+        "id": "apearson@tsc.corp.local",
         "host": "tsc.corp.local",
         "access_key": "6974206973207765646e657364617920",
         "secret_key": "6d792064756465732121212121212121",
@@ -161,11 +161,11 @@ INFO: Edit tenable.json for your environment
     "nessus_files": [
       {
         "enabled": true,
-        "directory": "/home/person/scan-files/ot"
+        "directory": "/home/apearson/scan-files/ot"
       },
       {
         "enabled": true,
-        "directory": "/home/person/scan-files/solarwinds"
+        "directory": "/home/apearson/scan-files/solarwinds"
       }
     ]
   },
@@ -173,7 +173,7 @@ INFO: Edit tenable.json for your environment
     "tenable_io": [
       {
         "enabled": true,
-        "id": "person@company.com",
+        "id": "apearson@redacted.com",
         "access_key": "6974206973207765646e6573646179206d792064756465732121212121212121",
         "secret_key": "6974206973207765646e6573646179206d792064756465732121212121212121",
         "proxies": null,
@@ -185,7 +185,7 @@ INFO: Edit tenable.json for your environment
     "tenable_sc": [
       {
         "enabled": true,
-        "id": "person@tsc.corp.local",
+        "id": "apearson@tsc.corp.local",
         "host": "tsc.corp.local",
         "access_key": "6974206973207765646e657364617920",
         "secret_key": "6d792064756465732121212121212121",
