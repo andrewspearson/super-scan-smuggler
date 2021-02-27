@@ -1,7 +1,6 @@
 # super-scan-smuggler
 super-scan-smuggler.py will download scan files from multiple Tenable.IO and/or Tenable.SC systems, then upload those scans to multiple Tenable.IO and/or Tenable.SC systems. It can also read in static Nessus scan files stored on disk and upload those.
 
-Background: I have two systems that are used for demos and each system receives different scan data. I wanted to replicate scan data among my demo systems and also replicate that scan data into my test/lab systems.
 ## Requirements
 * python3
 * [pyTenable](https://github.com/tenable/pyTenable)
