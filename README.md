@@ -210,8 +210,8 @@ INFO: Downloading scans from apearson@<redacted>
 INFO: Loading scan files from /home/person/scan-files/ot
 INFO: Loading scan files from /home/person/scan-files/solarwinds
 INFO: The following scans will be uploaded:
-      /home/person/scan-files/ot/OT.nessus
-      /home/person/scan-files/solarwinds/solarwinds.nessus
+      /home/apearson/scan-files/ot/OT.nessus
+      /home/apearson/scan-files/solarwinds/solarwinds.nessus
       /tmp/1.nessus
       /tmp/2.nessus
       /tmp/3.nessus
