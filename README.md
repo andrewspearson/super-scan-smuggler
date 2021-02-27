@@ -1,5 +1,7 @@
 # super-scan-smuggler
 super-scan-smuggler.py will download scan files from multiple Tenable.IO and/or Tenable.SC systems, then upload those scans to multiple Tenable.IO and/or Tenable.SC systems. It can also read in static Nessus scan files stored on disk and upload those.
+
+Background: I have two systems that are used for demos and each system receives different scan data. I wanted to replicate scan data among my demo systems and also replicate that scan data into my test/lab machines.
 ## Requirements
 * python3
 * [pyTenable](https://github.com/tenable/pyTenable)
@@ -159,23 +161,11 @@ INFO: Edit tenable.json for your environment
     "nessus_files": [
       {
         "enabled": true,
-        "directory": "/home/person/scan-files/malware"
-      },
-      {
-        "enabled": true,
-        "directory": "/home/person/scan-files/mdm"
-      },
-      {
-        "enabled": true,
         "directory": "/home/person/scan-files/ot"
       },
       {
         "enabled": true,
         "directory": "/home/person/scan-files/solarwinds"
-      },
-      {
-        "enabled": true,
-        "directory": "/home/person/scan-files/struts"
       }
     ]
   },
@@ -216,33 +206,13 @@ INFO: Edit tenable.json for your environment
 #### Run the script
 ```
 $ ./venv/bin/python /usr/local/bin/super-scan-smuggler/super-scan-smuggler.py --config /usr/local/bin/super-scan-smuggler/tenable.json 
-INFO: Downloading scans from apearson@<obfuscated>
-INFO: Downloading scans from apearson@<obfuscated>
-INFO: Loading scan files from /home/person/scan-files/malware
-INFO: Loading scan files from /home/person/scan-files/mdm
+INFO: Downloading scans from apearson@<redacted>
+INFO: Downloading scans from apearson@<redacted>
 INFO: Loading scan files from /home/person/scan-files/ot
 INFO: Loading scan files from /home/person/scan-files/solarwinds
-INFO: Loading scan files from /home/person/scan-files/struts
 INFO: The following scans will be uploaded:
-      /home/person/scan-files/malware/nessus_report_7.nessus
-      /home/person/scan-files/malware/nessus_report_12.nessus
-      /home/person/scan-files/malware/nessus_report_10.nessus
-      /home/person/scan-files/malware/nessus_report_9.nessus
-      /home/person/scan-files/malware/nessus_report_5.nessus
-      /home/person/scan-files/malware/nessus_report_1.nessus
-      /home/person/scan-files/malware/nessus_report_3.nessus
-      /home/person/scan-files/malware/nessus_report_6.nessus
-      /home/person/scan-files/malware/nessus_report_8.nessus
-      /home/person/scan-files/malware/nessus_report_4.nessus
-      /home/person/scan-files/malware/nessus_report_11.nessus
-      /home/person/scan-files/malware/nessus_report_2.nessus
-      /home/person/scan-files/mdm/AirWatch_MDM-4Assets.nessus
-      /home/person/scan-files/mdm/AirWatch_MDM-3Assets.nessus
       /home/person/scan-files/ot/OT.nessus
-      /home/person/scan-files/solarwinds/sunburst.nessus
-      /home/person/scan-files/solarwinds/Solarwinds_Orion.nessus
-      /home/person/scan-files/solarwinds/SUPERNOVA.nessus
-      /home/person/scan-files/struts/Struts.nessus
+      /home/person/scan-files/solarwinds/solarwinds.nessus
       /tmp/1.nessus
       /tmp/2.nessus
       /tmp/3.nessus
@@ -253,8 +223,8 @@ INFO: The following scans will be uploaded:
       /tmp/8.nessus
       /tmp/9.nessus
       /tmp/10.nessus
-INFO: Uploading scans to apearson@<obfuscated>
-INFO: Uploading scans to apearson@<obfuscated>
+INFO: Uploading scans to apearson@<redacted>
+INFO: Uploading scans to apearson@<redacted>
 INFO: Removing downloaded scan files from local disk
 INFO: Process complete
 ```
